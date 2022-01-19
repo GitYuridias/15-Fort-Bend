@@ -1,0 +1,114 @@
+2022-01-05 14:10:36,138 - scanner - INFO - ========================================================================
+2022-01-05 14:10:36,138 - scanner - INFO - Script called
+2022-01-05 14:10:36,138 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:10:36,138 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:10:36,138 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:10:36,138 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:10:46,479 - scanner.script - ERROR - Connection Timeout occured
+2022-01-05 14:11:18,684 - scanner - INFO - ========================================================================
+2022-01-05 14:11:18,684 - scanner - INFO - Script called
+2022-01-05 14:11:18,684 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:11:18,684 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:11:18,684 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:11:18,684 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:11:28,691 - scanner.script - ERROR - Connection Timeout occured
+2022-01-05 14:13:08,394 - scanner - INFO - ========================================================================
+2022-01-05 14:13:08,394 - scanner - INFO - Script called
+2022-01-05 14:13:08,394 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:13:08,394 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:13:08,395 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:13:08,395 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:13:09,378 - scanner.script - INFO - Target Response OK
+2022-01-05 14:13:46,768 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:13:46,768 - scanner.script - INFO - Exit from Script
+2022-01-05 14:13:46,768 - scanner.script - INFO - ...................................................................
+2022-01-05 14:14:18,932 - scanner - INFO - ========================================================================
+2022-01-05 14:14:18,932 - scanner - INFO - Script called
+2022-01-05 14:14:18,932 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:14:18,932 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:14:18,932 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:14:18,932 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:14:19,689 - scanner.script - INFO - Target Response OK
+2022-01-05 14:14:54,847 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:14:54,852 - scanner.script - INFO - Exit from Script
+2022-01-05 14:14:54,852 - scanner.script - INFO - ...................................................................
+2022-01-05 14:15:09,993 - scanner - INFO - ========================================================================
+2022-01-05 14:15:09,993 - scanner - INFO - Script called
+2022-01-05 14:15:09,993 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:15:09,993 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:15:09,993 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:15:09,993 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:15:10,761 - scanner.script - INFO - Target Response OK
+2022-01-05 14:15:45,906 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:15:45,906 - scanner.script - INFO - Exit from Script
+2022-01-05 14:15:45,906 - scanner.script - INFO - ...................................................................
+2022-01-05 14:25:04,247 - scanner - INFO - ========================================================================
+2022-01-05 14:25:04,247 - scanner - INFO - Script called
+2022-01-05 14:25:04,247 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:25:04,247 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:25:04,252 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:25:04,252 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:25:05,033 - scanner.script - INFO - Target Response OK
+2022-01-05 14:25:40,932 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:25:40,944 - scanner.script - INFO - Exit from Script
+2022-01-05 14:25:40,944 - scanner.script - INFO - ...................................................................
+2022-01-05 14:33:37,541 - scanner - INFO - ========================================================================
+2022-01-05 14:33:37,541 - scanner - INFO - Script called
+2022-01-05 14:33:37,541 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:33:37,541 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:33:37,541 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:33:37,541 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:33:38,660 - scanner.script - INFO - Target Response OK
+2022-01-05 14:34:13,918 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:34:13,920 - scanner.script - INFO - Exit from Script
+2022-01-05 14:34:13,920 - scanner.script - INFO - ...................................................................
+2022-01-05 14:34:22,780 - scanner - INFO - ========================================================================
+2022-01-05 14:34:22,780 - scanner - INFO - Script called
+2022-01-05 14:34:22,780 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:34:22,780 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:34:22,780 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:34:22,780 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:34:23,590 - scanner.script - INFO - Target Response OK
+2022-01-05 14:34:58,868 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:34:58,870 - scanner.script - INFO - Exit from Script
+2022-01-05 14:34:58,870 - scanner.script - INFO - ...................................................................
+2022-01-05 14:38:28,171 - scanner - INFO - ========================================================================
+2022-01-05 14:38:28,171 - scanner - INFO - Script called
+2022-01-05 14:38:28,171 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:38:28,171 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:38:28,171 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:38:28,171 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:38:28,981 - scanner.script - INFO - Target Response OK
+2022-01-05 14:39:04,251 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:39:04,253 - scanner.script - INFO - Exit from Script
+2022-01-05 14:39:04,253 - scanner.script - INFO - ...................................................................
+2022-01-05 14:39:06,202 - scanner - INFO - ========================================================================
+2022-01-05 14:39:06,202 - scanner - INFO - Script called
+2022-01-05 14:39:06,202 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:39:06,202 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:39:06,202 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:39:06,202 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:39:07,011 - scanner.script - INFO - Target Response OK
+2022-01-05 14:39:42,326 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:39:42,332 - scanner.script - INFO - Exit from Script
+2022-01-05 14:39:42,332 - scanner.script - INFO - ...................................................................
+2022-01-05 14:43:12,561 - scanner - INFO - ========================================================================
+2022-01-05 14:43:12,561 - scanner - INFO - Script called
+2022-01-05 14:43:12,561 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/09/1979RODRIGUEZROBERTO ]
+2022-01-05 14:43:12,561 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:43:12,561 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:43:12,561 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:43:13,361 - scanner.script - INFO - Target Response OK
+2022-01-05 14:43:49,521 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:43:49,523 - scanner.script - INFO - Exit from Script
+2022-01-05 14:43:49,523 - scanner.script - INFO - ...................................................................
+2022-01-05 14:46:18,476 - scanner - INFO - ========================================================================
+2022-01-05 14:46:18,476 - scanner - INFO - Script called
+2022-01-05 14:46:18,476 - scanner - INFO - with argument [ 0436D707-7660-444E-84E4-3F7F89675B6007/23/1954CANDLERJAMES ]
+2022-01-05 14:46:18,476 - scanner.engine - INFO - "System Health Check" passed
+2022-01-05 14:46:18,478 - scanner.script - INFO - Configuration loaded
+2022-01-05 14:46:18,478 - scanner.script - INFO - Chrome Driver loaded
+2022-01-05 14:46:19,284 - scanner.script - INFO - Target Response OK
+2022-01-05 14:47:01,674 - scanner.script - INFO - self.driver.quit()
+2022-01-05 14:47:01,676 - scanner.script - INFO - Exit from Script
+2022-01-05 14:47:01,676 - scanner.script - INFO - ...................................................................

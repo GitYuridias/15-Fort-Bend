@@ -1,0 +1,216 @@
+  <SearchCriteria>
+  <ScrapedDate>20220105</ScrapedDate>
+    <DateOfBirth>07/23/1954</DateOfBirth>
+    <SourceSite>http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx</SourceSite>
+    <DataSource>TX_FORT_BEND</DataSource>
+    <From>FORT BEND</From>
+    <ScrapedDate>20220105</ScrapedDate>
+    <Name1>CANDLER JAMES</Name1> 
+  </SearchCriteria>
+  <Subjects>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>HOUSTON</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>00000</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>19990917</CaseFileDate>
+          <CaseNumber>99-CCR-084293</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>County Court at Law 2</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>19990902</ChargeFileDate>
+              <Comments>
+	     </Comments>
+              <ArrestDate></ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Dismissed</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20000425</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>49.04 PC - DRIVING WHILE INTOXICATED</OffenseCode>
+              <OffenseDescription>DRIVING WHILE INTOXICATED</OffenseDescription>
+              <Severity>Class B Misdemeanor</Severity>
+	     <Statute>49.04 PC</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth>19540723</DateOfBirth>
+          <DateOfBirthDay>23</DateOfBirthDay>
+          <DateOfBirthMonth>07</DateOfBirthMonth>
+          <DateOfBirthYear>1954</DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+      <Names>
+        <Name>
+          <FirstName>James</FirstName>
+          <LastName>Candler</LastName>
+          <MiddleName>Milton</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      </Names>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>HOUSTON</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77083</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>19991018</CaseFileDate>
+          <CaseNumber>99-DCR-032385</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>240th District Court</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>19990902</ChargeFileDate>
+              <Comments>
+                <Comment>Bond Amount: 10,000</Comment>
+                <Comment>0 Years  0 Months  180 Days</Comment>
+                <Comment>0 Years , 0 Months , 180 Days , State Penitentiary, Texas Department of Criminal Justice</Comment>
+                <Comment>Jail Credit 56 Days</Comment>
+	     </Comments>
+              <ArrestDate>19990902</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Convicted</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20000605</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>481.134(D) HSC - POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3</OffenseCode>
+              <OffenseDescription>POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3</OffenseDescription>
+              <Severity>Third Degree Felony</Severity>
+	     <Statute>481.134(D) HSC</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth>19540723</DateOfBirth>
+          <DateOfBirthDay>23</DateOfBirthDay>
+          <DateOfBirthMonth>07</DateOfBirthMonth>
+          <DateOfBirthYear>1954</DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+      <Names>
+        <Name>
+          <FirstName>James</FirstName>
+          <LastName>Candler</LastName>
+          <MiddleName>Milton</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      </Names>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>HOUSTON</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>00000</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20000301</CaseFileDate>
+          <CaseNumber>00-CCR-084293A</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>County Court at Law 2</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>19990902</ChargeFileDate>
+              <Comments>
+	     </Comments>
+              <ArrestDate></ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Convicted</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20000710</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>49.04 PC - DRIVING WHILE INTOXICATED 2ND</OffenseCode>
+              <OffenseDescription>DRIVING WHILE INTOXICATED 2ND</OffenseDescription>
+              <Severity>Class A Misdemeanor</Severity>
+	     <Statute>49.04 PC</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth>19540723</DateOfBirth>
+          <DateOfBirthDay>23</DateOfBirthDay>
+          <DateOfBirthMonth>07</DateOfBirthMonth>
+          <DateOfBirthYear>1954</DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+      <Names>
+        <Name>
+          <FirstName>James</FirstName>
+          <LastName>Candler</LastName>
+          <MiddleName>Milton</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      </Names>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+  </Subjects>
