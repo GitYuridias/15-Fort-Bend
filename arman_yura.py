@@ -17,12 +17,11 @@ driver.get("http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx")
 driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
 
 # fill in the form (last name, first name, dob) and submit
-# Fixme: try this for "Lee, Derrick Tinnell" who has 2 charges; also fix inconsistencies in XPATH
 
-last = "Lee"
-first = "Derrick"
-middle = "Tirrell"
-birth = ""
+# last = "Lee"
+# first = "Derrick"
+# middle = "Tirrell"
+# birth = ""
 
 # last = "Candler"
 # first = "James"
@@ -33,6 +32,11 @@ birth = ""
 # first = "Willie"
 # middle = "Charles"
 # birth = ""
+
+last = "Williams"
+first = "Billy"
+middle = "Ray"
+birth = ""
 
 Internal_ID = "0436D707-7660-444E-84E4-3F7F89675B60"
 
@@ -85,32 +89,52 @@ else:
         driver.find_element(By.XPATH, f"/html/body/table[4]/tbody/tr[{i}]/td[1]/a").click()
 
         driver.implicitly_wait(2)
+
+        results["info"][f"case_{i - 2}"] = {}
+
+        results["info"][f"case_{i - 2}"]['First_Name'] = first
+        results["info"][f"case_{i - 2}"]['Last_Name'] = last
+        results["info"][f"case_{i - 2}"]['Middle_Name'] = middle
+        results["info"][f"case_{i - 2}"]['Suffix'] = ""
         # Getting Middle Name and Suffix from case page defendant part
-        if len(driver.find_element(By.ID, "PIr11").text.split(' ')) == 3 and not results["primary"]['Middle_Name']:
-            results["primary"]['Middle_Name'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
+        if len(driver.find_element(By.ID, "PIr11").text.split(' ')) == 3 and not results["info"][f"case_{i - 2}"]['Middle_Name']:
+            results["info"][f"case_{i - 2}"]['Middle_Name'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
         elif len(driver.find_element(By.ID, "PIr11").text.split(' ')) > 3:
-            results["primary"]['Suffix'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
+            if driver.find_element(By.ID, "PIr11").text.split(' ')[-1] != middle:
+                results["info"][f"case_{i - 2}"]['Suffix'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
 
         tb_number = 4
         if driver.find_element(By.CLASS_NAME, "ssCaseDetailSectionTitle").text == "Related Case Information":
             tb_number += 1
+        sub_tb_number = tb_number
 
-        results["primary"]['Gender'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[0]
-        results["primary"]['Race'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[1].split('\n')[0]
+        try:
+            results["info"][f"case_{i - 2}"]['Gender'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[0]
+            results["info"][f"case_{i - 2}"]['Race'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[1].split('\n')[0]
+        except:
+            results["info"][f"case_{i - 2}"]['Gender'] = ""
+            results["info"][f"case_{i - 2}"]['Race'] = ""
 
-        results["info"][f"case_{i - 2}"] = {}
+        try:
+            results["info"][f"case_{i - 2}"]['City'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[0]
+            results["info"][f"case_{i - 2}"]['State'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][:2]
+            results["info"][f"case_{i - 2}"]['Zip'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][2:]
+        except:
+            results["info"][f"case_{i - 2}"]['City'] = ""
+            results["info"][f"case_{i - 2}"]['State'] = ""
+            results["info"][f"case_{i - 2}"]['Zip'] = ""
 
-        results["info"][f"case_{i - 2}"]['City'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[0]
-        results["info"][f"case_{i - 2}"]['State'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][:2]
-        results["info"][f"case_{i - 2}"]['Zip'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][2:]
-
-        cfd = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[2]/td/b").text
-        results["info"][f"case_{i - 2}"]['CaseFileDate'] = cfd[-4:] + cfd[0:2] + cfd[3:5]
-        results["info"][f"case_{i - 2}"]['CaseNumber'] = driver.find_element(By.XPATH, "/html/body/div[2]/span").text
         results["info"][f"case_{i - 2}"]['Category'] = "CRIMINAL"
         results["info"][f"case_{i - 2}"]['CourtJurisdiction'] = 'FORT BEND'
-        results["info"][f"case_{i - 2}"]['CourtName'] = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[3]/td/b").text
-
+        try:
+            cfd = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[2]/td/b").text
+            results["info"][f"case_{i - 2}"]['CaseFileDate'] = cfd[-4:] + cfd[0:2] + cfd[3:5]
+            results["info"][f"case_{i - 2}"]['CaseNumber'] = driver.find_element(By.XPATH, "/html/body/div[2]/span").text
+            results["info"][f"case_{i - 2}"]['CourtName'] = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[3]/td/b").text
+        except:
+            results["info"][f"case_{i - 2}"]['CaseFileDate'] = ""
+            results["info"][f"case_{i - 2}"]['CaseNumber'] = ""
+            results["info"][f"case_{i - 2}"]['CourtName'] = ""
         # charge(s)
 
         all_page_tables = driver.find_elements(By.XPATH, "/html/body/table")
@@ -135,18 +159,26 @@ else:
             counter += 1
             results["info"][f"case_{i - 2}"][f"charge_{counter}"] = {}
             tds = ct_trs[j].find_elements(By.TAG_NAME, "td")
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = tds[5].text[-4:] + tds[5].text[0:2] + tds[5].text[3:5]
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text + " - " + \
-                                                                                   driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[2]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[2]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[5]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text
+            try:
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = tds[5].text[-4:] + tds[5].text[0:2] + tds[5].text[3:5]
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text + " - " + \
+                                                                                       driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[2]").text
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[2]").text
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[5]").text
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text
+            except:
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = ""
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = ""
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = ""
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = ""
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = ""
+
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["CountyOrJurisdiction"] = "FORT BEND"
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = ""
 
-            if table_sequence == 1: # fix
-                sub_tb_number = tb_number - 1
-                table_sequence = 0 # fix
+            if table_sequence == 1:
+                if j == 1:
+                    sub_tb_number = tb_number - 1
                 results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ArrestDate"] = results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"]
                 results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Comment"] = ""
             else:
@@ -165,6 +197,8 @@ else:
                         results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = d.text
                         results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = dd.text[-4:] + dd.text[0:2] + dd.text[3:5]
                 except:
+                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = ""
+                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = ""
                     continue
 
                 try:
@@ -182,8 +216,6 @@ else:
         driver.back()
 
 time.sleep(2)
-#values = [{"key": k, "information": v} for k, v in results.items()]
-#print(json.dumps(values, indent=4))
 
 with open(f"{last}_{first}.json", "w") as outfile:
     json.dump(results, outfile, indent=4)
