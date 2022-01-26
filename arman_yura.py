@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import warnings
+import json
 from datetime import datetime
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -56,7 +57,7 @@ results["primary"]['Middle_Name'] = middle
 results["primary"]['Date_of_Birth'] = birth[:-4] + birth[0:2] + birth[3:5]
 results["primary"]['State_Abbreviation'] = "TX"
 results["primary"]['Area'] = "Fort Bend"
-results["primary"]['today'] = datetime.today()
+results["primary"]['today'] = str(datetime.today())
 results["primary"]['Internal_ID'] = Internal_ID
 results["primary"]['Source_Site'] = "https://www.fortbendcountytx.gov/government/courts/court-records-research"
 results["primary"]['DATA_SOURCE'] = "TX_FORT_BEND"
@@ -76,22 +77,24 @@ else:
 
         driver.find_element(By.XPATH, f"/html/body/table[4]/tbody/tr[{i}]/td[1]/a").click()
 
+        driver.implicitly_wait(2)
         # Getting Middle Name and Suffix from case page defendant part
         if len(driver.find_element(By.ID, "PIr11").text.split(' ')) == 3 and not results["primary"]['Middle_Name']:
             results["primary"]['Middle_Name'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
         elif len(driver.find_element(By.ID, "PIr11").text.split(' ')) > 3:
             results["primary"]['Suffix'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
 
-        results["primary"]['Gender'] = driver.find_element(By.XPATH, "/html/body/table[5]/tbody/tr[2]/td[2]").text.split(' ')[0]
-        results["primary"]['Race'] = driver.find_element(By.XPATH, "/html/body/table[5]/tbody/tr[2]/td[2]").text.split(' ')[1].split('\n')[0]
-
-        driver.implicitly_wait(2)
-        all_page_tables = driver.find_elements(By.XPATH, "/html/body/table")
-
-        results["info"][f"case_{i - 2}"] = {}
         tb_number = 4
         if driver.find_element(By.CLASS_NAME, "ssCaseDetailSectionTitle").text == "Related Case Information":
             tb_number += 1
+
+        results["primary"]['Gender'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[0]
+        results["primary"]['Race'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[1].split('\n')[0]
+
+        # all_page_tables = driver.find_elements(By.XPATH, "/html/body/table")
+
+        results["info"][f"case_{i - 2}"] = {}
+
 
         results["info"][f"case_{i - 2}"]['City'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[0]
         results["info"][f"case_{i - 2}"]['State'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][:2]
@@ -130,7 +133,7 @@ else:
                     results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = dd.text[-4:] + dd.text[0:2] + dd.text[3:5]
                 elif "Committed" in dt_trs[k].text:
                     sentence = dt_trs[k].find_elements(By.TAG_NAME, "span")
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = [" " + x.text for x in sentence[1:]][:-1]
+                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = [" " + sentence[x].text for x in range(1,len(sentence))]
                 else:
                     results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = ""
 
@@ -140,8 +143,14 @@ else:
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[5]").text
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[4]").text
 
-
         time.sleep(3)
         driver.back()
 
+time.sleep(2)
 # driver.quit()
+
+values = [{"key": k, "information": v} for k, v in results.items()]
+print(json.dumps(values, indent=4))
+
+with open(f"{Internal_ID}.json", "w") as outfile:
+    json.dump(results, outfile, indent=4)
