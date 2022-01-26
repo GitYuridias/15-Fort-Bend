@@ -17,15 +17,21 @@ driver.get("http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx")
 driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
 
 # fill in the form (last name, first name, dob) and submit
-last = "Candler"
-first = "James"
-middle = ""
-birth = "07/23/1954"
+# Fixme: try this for "Lee, Derrick Tinnell" who has 2 charges; also fix inconsistencies in XPATH
+# last = "Candler"
+# first = "James"
+# middle = ""
+# birth = "07/23/1954"
 
-# last = "Williams"
-# first = "Willie"
-# middle = "Charles"
-# birth = ""
+# last = "Candler"
+# first = "James"
+# middle = ""
+# birth = "07/23/1954"
+
+last = "Williams"
+first = "Willie"
+middle = "Charles"
+birth = ""
 
 Internal_ID = "0436D707-7660-444E-84E4-3F7F89675B60"
 
@@ -124,18 +130,23 @@ else:
             ad = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1 +j}]/tbody/tr[2]/td/table/tbody/tr[4]/td/table/tbody/tr/td[1]").text
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ArrestDate"] = ad[-4:] + ad[0:2] + ad[3:5]
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["CountyOrJurisdiction"] = "FORT BEND"
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = ""
 
             for k in range(len(dt_trs)):
+
                 if "Judgment" in dt_trs[k].text:
                     d = dt_trs[k].find_element(By.XPATH, "./td[3]/div/div/div/div[1]")
                     dd = dt_trs[k].find_element(By.TAG_NAME, "th")
                     results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = d.text
                     results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = dd.text[-4:] + dd.text[0:2] + dd.text[3:5]
-                elif "Committed" in dt_trs[k].text:
-                    sentence = dt_trs[k].find_elements(By.TAG_NAME, "span")
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = [" " + sentence[x].text for x in range(1,len(sentence))]
-                else:
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = ""
+
+                if "Committed" in dt_trs[k].text:
+                    nobr = dt_trs[k].find_element(By.XPATH, "./td[3]/div/div/div/div/table/tbody/tr[2]/td[2]/nobr")
+                    sentence = nobr.find_elements(By.TAG_NAME, "span")
+                    final_sentence = " ".join([" " + sentence[x].text for x in range(len(sentence))])
+                    final_sentence = final_sentence.replace("  ", "")
+                    final_sentence = final_sentence.replace(",", "")
+                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = final_sentence
 
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[4]").text + " - " + \
                                                                                    driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[2]").text
@@ -147,10 +158,10 @@ else:
         driver.back()
 
 time.sleep(2)
-# driver.quit()
-
-values = [{"key": k, "information": v} for k, v in results.items()]
-print(json.dumps(values, indent=4))
+#values = [{"key": k, "information": v} for k, v in results.items()]
+#print(json.dumps(values, indent=4))
 
 with open(f"{Internal_ID}.json", "w") as outfile:
     json.dump(results, outfile, indent=4)
+
+driver.quit()
