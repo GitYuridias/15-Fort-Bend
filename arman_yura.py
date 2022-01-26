@@ -18,20 +18,21 @@ driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
 
 # fill in the form (last name, first name, dob) and submit
 # Fixme: try this for "Lee, Derrick Tinnell" who has 2 charges; also fix inconsistencies in XPATH
-# last = "Candler"
-# first = "James"
-# middle = ""
-# birth = "07/23/1954"
 
-# last = "Candler"
-# first = "James"
-# middle = ""
-# birth = "07/23/1954"
-
-last = "Williams"
-first = "Willie"
-middle = "Charles"
+last = "Lee"
+first = "Derrick"
+middle = "Tirrell"
 birth = ""
+
+# last = "Candler"
+# first = "James"
+# middle = ""
+# birth = "07/23/1954"
+
+# last = "Williams"
+# first = "Willie"
+# middle = "Charles"
+# birth = ""
 
 Internal_ID = "0436D707-7660-444E-84E4-3F7F89675B60"
 
@@ -97,10 +98,7 @@ else:
         results["primary"]['Gender'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[0]
         results["primary"]['Race'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[1].split('\n')[0]
 
-        # all_page_tables = driver.find_elements(By.XPATH, "/html/body/table")
-
         results["info"][f"case_{i - 2}"] = {}
-
 
         results["info"][f"case_{i - 2}"]['City'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[0]
         results["info"][f"case_{i - 2}"]['State'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][:2]
@@ -115,44 +113,70 @@ else:
 
         # charge(s)
 
+        all_page_tables = driver.find_elements(By.XPATH, "/html/body/table")
+        table_sequence = 0
+        for rank in range(len(all_page_tables)):
+            try:
+                if all_page_tables[rank].find_element(By.XPATH, "./caption/div").text == "Charge Information":
+                    table_sequence -= rank
+            except:
+                continue
+            try:
+                if all_page_tables[rank].find_element(By.XPATH, "./caption/div").text == "Events & Orders of the Court":
+                    table_sequence += rank
+            except:
+                continue
+
         charge_table = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody")
-        disposition_table = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 3}]/tbody")
         ct_trs = charge_table.find_elements(By.TAG_NAME, "tr")
-        dt_trs = disposition_table.find_elements(By.TAG_NAME, "tr")
+
         counter = 0
-        # Fixme: try this for "Lee, Derrick Tinnell" who has 2 charges; also fix inconsistencies in XPATH
         for j in range(1, len(ct_trs), 2):
             counter += 1
             results["info"][f"case_{i - 2}"][f"charge_{counter}"] = {}
             tds = ct_trs[j].find_elements(By.TAG_NAME, "td")
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = tds[5].text[-4:] + tds[5].text[0:2] + tds[5].text[3:5]
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Comment"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1 +j}]/tbody/tr[2]/td/table/tbody/tr[5]/td/table/tbody/tr/td[2]").text
-            ad = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1 +j}]/tbody/tr[2]/td/table/tbody/tr[4]/td/table/tbody/tr/td[1]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ArrestDate"] = ad[-4:] + ad[0:2] + ad[3:5]
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text + " - " + \
+                                                                                   driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[2]").text
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[2]").text
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[5]").text
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["CountyOrJurisdiction"] = "FORT BEND"
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = ""
 
+            if table_sequence == 1: # fix
+                sub_tb_number = tb_number - 1
+                table_sequence = 0 # fix
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ArrestDate"] = results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"]
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Comment"] = ""
+            else:
+                ad = driver.find_element(By.XPATH, f"/html/body/table[{sub_tb_number + 1 + j}]/tbody/tr[2]/td/table/tbody/tr[4]/td/table/tbody/tr/td[1]").text
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ArrestDate"] = ad[-4:] + ad[0:2] + ad[3:5]
+                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Comment"] = driver.find_element(By.XPATH, f"/html/body/table[{sub_tb_number + 1 + j}]/tbody/tr[2]/td/table/tbody/tr[5]/td/table/tbody/tr/td[2]").text
+
+            disposition_table = driver.find_element(By.XPATH, f"/html/body/table[{sub_tb_number + 3}]/tbody")
+            dt_trs = disposition_table.find_elements(By.TAG_NAME, "tr")
+
             for k in range(len(dt_trs)):
+                try:
+                    if "Judgment" in dt_trs[k].text:
+                        d = dt_trs[k].find_element(By.XPATH, "./td[3]/div/div/div/div[1]")
+                        dd = dt_trs[k].find_element(By.TAG_NAME, "th")
+                        results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = d.text
+                        results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = dd.text[-4:] + dd.text[0:2] + dd.text[3:5]
+                except:
+                    continue
 
-                if "Judgment" in dt_trs[k].text:
-                    d = dt_trs[k].find_element(By.XPATH, "./td[3]/div/div/div/div[1]")
-                    dd = dt_trs[k].find_element(By.TAG_NAME, "th")
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = d.text
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = dd.text[-4:] + dd.text[0:2] + dd.text[3:5]
-
-                if "Committed" in dt_trs[k].text:
-                    nobr = dt_trs[k].find_element(By.XPATH, "./td[3]/div/div/div/div/table/tbody/tr[2]/td[2]/nobr")
-                    sentence = nobr.find_elements(By.TAG_NAME, "span")
-                    final_sentence = " ".join([" " + sentence[x].text for x in range(len(sentence))])
-                    final_sentence = final_sentence.replace("  ", "")
-                    final_sentence = final_sentence.replace(",", "")
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = final_sentence
-
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[4]").text + " - " + \
-                                                                                   driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[2]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[2]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[5]").text
-            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1+j}]/td[4]").text
+                try:
+                    if "Committed" in dt_trs[k].text:
+                        nobr = dt_trs[k].find_element(By.XPATH, "./td[3]/div/div/div/div/table/tbody/tr[2]/td[2]/nobr")
+                        sentence = nobr.find_elements(By.TAG_NAME, "span")
+                        final_sentence = " ".join([" " + sentence[x].text for x in range(len(sentence))])
+                        final_sentence = final_sentence.replace("  ", "")
+                        final_sentence = final_sentence.replace(",", "")
+                        results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = final_sentence
+                except:
+                    continue
 
         time.sleep(3)
         driver.back()
@@ -161,7 +185,7 @@ time.sleep(2)
 #values = [{"key": k, "information": v} for k, v in results.items()]
 #print(json.dumps(values, indent=4))
 
-with open(f"{Internal_ID}.json", "w") as outfile:
+with open(f"{last}_{first}.json", "w") as outfile:
     json.dump(results, outfile, indent=4)
 
 driver.quit()

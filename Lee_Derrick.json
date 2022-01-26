@@ -1,0 +1,19 @@
+{
+    "primary": {
+        "First_Name": "Derrick",
+        "Last_Name": "Lee",
+        "Middle_Name": "Tinnell",
+        "Date_of_Birth": "",
+        "State_Abbreviation": "TX",
+        "Area": "Fort Bend",
+        "today": "2022-01-26 23:10:15.937820",
+        "Internal_ID": "0436D707-7660-444E-84E4-3F7F89675B60",
+        "Source_Site": "https://www.fortbendcountytx.gov/government/courts/court-records-research",
+        "DATA_SOURCE": "TX_FORT_BEND",
+        "status": "Complete",
+        "Result_Not_Found": "true",
+        "Search_Type": "CRIMINAL"
+    },
+    "aliases": {},
+    "info": {}
+}
