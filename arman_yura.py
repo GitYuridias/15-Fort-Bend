@@ -1,12 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import warnings
 import json
+import os
 from datetime import datetime
+from jinja2 import Template
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 PATH = "C:\Program Files (x86)\chromedriver.exe"
@@ -18,15 +19,15 @@ driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
 
 # fill in the form (last name, first name, dob) and submit
 
-# last = "Lee"
-# first = "Derrick"
-# middle = "Tirrell"
-# birth = ""
+last = "Lee"
+first = "Derrick"
+middle = "Tirrell"
+birth = ""
 
-last = "Candler"
-first = "James"
-middle = ""
-birth = "07/23/1954"
+# last = "Candler"
+# first = "James"
+# middle = ""
+# birth = "07/23/1954"
 
 # last = "Williams"
 # first = "Willie"
@@ -65,12 +66,12 @@ results = {"primary": {}, "aliases": {}, 'info': {}}
 results["primary"]['First_Name'] = first
 results["primary"]['Last_Name'] = last
 results["primary"]['Middle_Name'] = middle
-results["primary"]['Date_of_Birth'] = birth[:-4] + birth[0:2] + birth[3:5]
+results["primary"]['Date_of_Birth'] = birth[-4:] + birth[0:2] + birth[3:5]
 results["primary"]['State_Abbreviation'] = "TX"
 results["primary"]['Area'] = "Fort Bend"
 results["primary"]['today'] = str(datetime.today())
 results["primary"]['Internal_ID'] = Internal_ID
-results["primary"]['Source_Site'] = "https://www.fortbendcountytx.gov/government/courts/court-records-research"
+results["primary"]['Source_Site'] = "http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx"
 results["primary"]['DATA_SOURCE'] = "TX_FORT_BEND"
 results["primary"]['status'] = "Complete"
 results["primary"]['Result_Not_Found'] = 'false'
@@ -109,24 +110,30 @@ else:
             tb_number += 1
         sub_tb_number = tb_number
 
+        results["info"][f"case_{i - 2}"]['Gender'] = ""
+        results["info"][f"case_{i - 2}"]['Race'] = ""
+        results["info"][f"case_{i - 2}"]['City'] = ""
+        results["info"][f"case_{i - 2}"]['State'] = ""
+        results["info"][f"case_{i - 2}"]['Zip'] = ""
+
         try:
             results["info"][f"case_{i - 2}"]['Gender'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[0]
             results["info"][f"case_{i - 2}"]['Race'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[2]/td[2]").text.split(' ')[1].split('\n')[0]
         except:
-            results["info"][f"case_{i - 2}"]['Gender'] = ""
-            results["info"][f"case_{i - 2}"]['Race'] = ""
+            continue
 
         try:
             results["info"][f"case_{i - 2}"]['City'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[0]
             results["info"][f"case_{i - 2}"]['State'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][:2]
             results["info"][f"case_{i - 2}"]['Zip'] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number}]/tbody/tr[3]/td").text.replace(" ", "").split(',')[1][2:]
         except:
-            results["info"][f"case_{i - 2}"]['City'] = ""
-            results["info"][f"case_{i - 2}"]['State'] = ""
-            results["info"][f"case_{i - 2}"]['Zip'] = ""
+            continue
 
         results["info"][f"case_{i - 2}"]['Category'] = "CRIMINAL"
         results["info"][f"case_{i - 2}"]['CourtJurisdiction'] = 'FORT BEND'
+        results["info"][f"case_{i - 2}"]['CaseFileDate'] = ""
+        results["info"][f"case_{i - 2}"]['CaseNumber'] = ""
+        results["info"][f"case_{i - 2}"]['CourtName'] = ""
 
         try:
             cfd = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[2]/td/b").text
@@ -134,9 +141,7 @@ else:
             results["info"][f"case_{i - 2}"]['CaseNumber'] = driver.find_element(By.XPATH, "/html/body/div[2]/span").text
             results["info"][f"case_{i - 2}"]['CourtName'] = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[3]/td/b").text
         except:
-            results["info"][f"case_{i - 2}"]['CaseFileDate'] = ""
-            results["info"][f"case_{i - 2}"]['CaseNumber'] = ""
-            results["info"][f"case_{i - 2}"]['CourtName'] = ""
+            continue
 
 
         # charge(s)
@@ -162,6 +167,11 @@ else:
             counter += 1
             results["info"][f"case_{i - 2}"][f"charge_{counter}"] = {}
             tds = ct_trs[j].find_elements(By.TAG_NAME, "td")
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = ""
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = ""
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = ""
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = ""
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = ""
             try:
                 results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = tds[5].text[-4:] + tds[5].text[0:2] + tds[5].text[3:5]
                 results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text + " - " + \
@@ -170,14 +180,12 @@ else:
                 results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[5]").text
                 results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = driver.find_element(By.XPATH, f"/html/body/table[{tb_number + 1}]/tbody/tr[{1 + j}]/td[4]").text
             except:
-                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["ChargeFileDate"] = ""
-                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseCode"] = ""
-                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["OffenseDescription"] = ""
-                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Severity"] = ""
-                results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Statute"] = ""
+                continue
 
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["CountyOrJurisdiction"] = "FORT BEND"
             results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Sentence"] = ""
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = ""
+            results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = ""
 
             if table_sequence == 1:
                 if j == 1:
@@ -200,8 +208,6 @@ else:
                         results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = d.text
                         results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = dd.text[-4:] + dd.text[0:2] + dd.text[3:5]
                 except:
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["Disposition"] = ""
-                    results["info"][f"case_{i - 2}"][f"charge_{counter}"]["DispositionDate"] = ""
                     continue
 
                 try:
@@ -215,21 +221,73 @@ else:
                 except:
                     continue
 
-        time.sleep(3)
         driver.back()
 
 time.sleep(2)
 
+driver.quit()
+
 with open(f"{last}_{first}.json", "w") as outfile:
     json.dump(results, outfile, indent=4)
+
+dob_formatted = results["primary"]["Date_of_Birth"]
+
+XMLgeneral = {}
+XMLgeneral["ScrapedDate"] = datetime.now().strftime('%Y%m%d')
+XMLgeneral["SearchCriteria"] = {}
+XMLgeneral["SearchCriteria"]["DateOfBirth"] = dob_formatted[4:6] + "/" + dob_formatted[-2:] + "/" + dob_formatted[:4]
+XMLgeneral["SearchCriteria"]["SourceSite"] = results["primary"]['Source_Site']
+XMLgeneral["SearchCriteria"]["DataSource"] = results["primary"]['DATA_SOURCE']
+XMLgeneral["SearchCriteria"]["From"] = "FORT BEND"
+XMLgeneral["SearchCriteria"]["ScrapedDate"] = XMLgeneral["ScrapedDate"]
+XMLgeneral["SearchCriteria"]["Name1"] = results["primary"]['Last_Name'].upper() + " " + results["primary"]['First_Name'].upper()
+
+def countCharges(input, lookup):
+    count = 0
+    for key, value in input.items():
+        if key.startswith(lookup):
+            count += 1
+    return count
+
+XMLcases = []
+for i in range(len(results["info"])):
+    XMLcases.append({})
+    XMLcases[i]["City"] = results["info"][f"case_{i+1}"]['City']
+    XMLcases[i]["State"] = results["info"][f"case_{i+1}"]['State']
+    XMLcases[i]["ZipCode"] = results["info"][f"case_{i+1}"]['Zip']
+    XMLcases[i]["CaseFileDate"] = results["info"][f"case_{i+1}"]['CaseFileDate']
+    XMLcases[i]["CaseNumber"] = results["info"][f"case_{i+1}"]['CaseNumber']
+    XMLcases[i]["CourtName"] = results["info"][f"case_{i+1}"]['CourtName']
+    XMLcases[i]["Offenses"] = []
+
+    for j in range(1, countCharges(results["info"][f"case_{i+1}"], "charge")+1):
+        charge = {}
+        charge["ChargeFileDate"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["ChargeFileDate"]
+        charge["Comment"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["Comment"]
+        charge["Sentence"] = results["info"][f"case_{i + 1}"][f"charge_{j}"]["Sentence"]
+        charge["ArrestDate"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["ArrestDate"]
+        charge["Disposition"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["Disposition"]
+        charge["DispositionDate"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["DispositionDate"]
+        charge["OffenseCode"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["OffenseCode"]
+        charge["OffenseDescription"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["OffenseDescription"]
+        charge["Severity"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["Severity"]
+        charge["Statute"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["Statute"]
+        XMLcases[i]["Offenses"].append(charge)
+
+    XMLcases[i]["DateOfBirth"] = dob_formatted
+    XMLcases[i]["DateOfBirthDay"] = dob_formatted[-2:]
+    XMLcases[i]["DateOfBirthMonth"] = dob_formatted[4:6]
+    XMLcases[i]["DateOfBirthYear"] = dob_formatted[:4]
+    XMLcases[i]["first"] = results["info"][f"case_{i+1}"]['First_Name']
+    XMLcases[i]["last"] = results["info"][f"case_{i+1}"]['Last_Name']
+    XMLcases[i]["middle"] = results["info"][f"case_{i+1}"]['Middle_Name']
+    XMLcases[i]["suffix"] = results["info"][f"case_{i+1}"]['Suffix']
+    XMLcases[i]["Gender"] = results["info"][f"case_{i+1}"]['Gender']
+    XMLcases[i]["Race"] = results["info"][f"case_{i+1}"]['Race']
 
 current_folder_path, current_folder_name = os.path.split(os.path.abspath(__file__))
 xmlTemplate = current_folder_path + '\\arman_yura.xml'
 xml = open(xmlTemplate).read()
 template = Template(xml)
-print(self.generalData)
-print(self.bigDATA)
-rep = template.render(general=self.generalData, subjects=self.bigDATA)
-open(self.xmlRep, "w").write(rep)
-
-driver.quit()
+rep = template.render(general=XMLgeneral, subjects=XMLcases)
+open(f"{last}_{first}.xml", "w").write(rep)

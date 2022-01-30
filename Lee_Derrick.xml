@@ -1,0 +1,354 @@
+  <SearchCriteria>
+  <ScrapedDate>20220130</ScrapedDate>
+    <DateOfBirth>//</DateOfBirth>
+    <SourceSite>http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx</SourceSite>
+    <DataSource>TX_FORT_BEND</DataSource>
+    <From>FORT BEND</From>
+    <ScrapedDate>20220130</ScrapedDate>
+    <Name1>LEE DERRICK</Name1>
+  </SearchCriteria>
+  <Subjects>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>Houston</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77028</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20100920</CaseFileDate>
+          <CaseNumber>10-DCR-055404</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>434th District Court</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20100827</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence></Sentence>
+              <ArrestDate>20100827</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Dismissed</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20120112</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>30.02(c)(2) - BURGLARY OF HABITATION</OffenseCode>
+              <OffenseDescription>BURGLARY OF HABITATION</OffenseDescription>
+              <Severity>Second Degree Felony</Severity>
+	     <Statute>30.02(c)(2)</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Derrick</FirstName>
+          <LastName>Lee</LastName>
+          <MiddleName>Tirrell</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>Houston</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77028</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20101005</CaseFileDate>
+          <CaseNumber>2010-JPD-438</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>District Clerk</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20100827</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence></Sentence>
+              <ArrestDate>20100827</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition></Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate></DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>NA - Att Burglary of Habitation / F3</OffenseCode>
+              <OffenseDescription>Att Burglary of Habitation / F3</OffenseDescription>
+              <Severity>Felony Unassigned</Severity>
+	     <Statute>NA</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Derrick</FirstName>
+          <LastName>Lee</LastName>
+          <MiddleName>Tirrell</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>Houston</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77028</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20110627</CaseFileDate>
+          <CaseNumber>10-DCR-055404A</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>434th District Court</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20100827</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence> 5 Years</Sentence>
+              <ArrestDate>20100827</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Convicted</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20120112</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>30.02(c)(2) - ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseCode>
+              <OffenseDescription>ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseDescription>
+              <Severity>Third Degree Felony</Severity>
+	     <Statute>30.02(c)(2)</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+            <Offense>
+              <ChargeFileDate>20100827</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence> 5 Years</Sentence>
+              <ArrestDate>20100827</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Convicted</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20120112</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>30.02(c)(2) - ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseCode>
+              <OffenseDescription>ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseDescription>
+              <Severity>Third Degree Felony</Severity>
+	     <Statute>30.02(c)(2)</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Derrick</FirstName>
+          <LastName>Lee</LastName>
+          <MiddleName>Tirrell</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>Houston</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77028</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20180308</CaseFileDate>
+          <CaseNumber>2018-SW-2090</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>District Clerk</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20180308</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence></Sentence>
+              <ArrestDate>20180308</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition></Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate></DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>NA - Other Felony (Other)</OffenseCode>
+              <OffenseDescription>Other Felony (Other)</OffenseDescription>
+              <Severity>Felony Unassigned</Severity>
+	     <Statute>NA</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Derrick</FirstName>
+          <LastName>Lee</LastName>
+          <MiddleName>Tirrell</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>Houston</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77028</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20180410</CaseFileDate>
+          <CaseNumber>2018-SW-2116</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>District Clerk</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20180410</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence></Sentence>
+              <ArrestDate>20180410</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition></Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate></DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>NA - Search Warrant</OffenseCode>
+              <OffenseDescription>Search Warrant</OffenseDescription>
+              <Severity>Felony Unassigned</Severity>
+	     <Statute>NA</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Derrick</FirstName>
+          <LastName>Lee</LastName>
+          <MiddleName>Tirrell</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+  </Subjects>

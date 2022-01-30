@@ -27,9 +27,8 @@
           <Offenses>{% for offense in subject.Offenses %}
             <Offense>
               <ChargeFileDate>{{ offense.ChargeFileDate }}</ChargeFileDate>
-              <Comments>{% for comment in offense.Comments %}
-                <Comment>{{ comment }}</Comment>{% endfor %}
-	     </Comments>
+              <Comment>{{ offense.Comment }}</Comment>
+              <Sentence>{{ offense.Sentence }}</Sentence>
               <ArrestDate>{{ offense.ArrestDate }}</ArrestDate>
               <ConvictionDate></ConvictionDate>
               <ConvictionLocation></ConvictionLocation>
@@ -58,15 +57,13 @@
           <Type>Primary</Type>
         </DateOfBirth>
       </DatesOfBirth>
-      <Names>{% for name in subject.Names %}
         <Name>
-          <FirstName>{{ name.first }}</FirstName>
-          <LastName>{{ name.last }}</LastName>
-          <MiddleName>{{ name.middle }}</MiddleName>
-          <Suffix>{{ name.suffix }}</Suffix>
-          <Type>{{ name.type }}</Type>
-        </Name>{% endfor %}
-      </Names>
+          <FirstName>{{ subject.first }}</FirstName>
+          <LastName>{{ subject.last }}</LastName>
+          <MiddleName>{{ subject.middle }}</MiddleName>
+          <Suffix>{{ subject.suffix }}</Suffix>
+          <Type>Primary</Type>
+        </Name>
       <Gender>{{ subject.Gender }}</Gender>
       <Race>{{ subject.Race }}</Race>
       <ImageMatches />
