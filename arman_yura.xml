@@ -1,0 +1,74 @@
+  <SearchCriteria>
+  <ScrapedDate>{{ general.ScrapedDate }}</ScrapedDate>{% for key, value in general.SearchCriteria.items() %}
+    <{{ key }}>{{ value }}</{{ key }}>{% endfor %}
+  </SearchCriteria>
+  <Subjects>{% for subject in subjects %}
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>{{ subject.City }}</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>{{ subject.State }}</State>
+        <ZipCode>{{ subject.ZipCode }}</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>{{ subject.CaseFileDate }}</CaseFileDate>
+          <CaseNumber>{{ subject.CaseNumber }}</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>{{ subject.CourtName }}</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>{% for offense in subject.Offenses %}
+            <Offense>
+              <ChargeFileDate>{{ offense.ChargeFileDate }}</ChargeFileDate>
+              <Comments>{% for comment in offense.Comments %}
+                <Comment>{{ comment }}</Comment>{% endfor %}
+	     </Comments>
+              <ArrestDate>{{ offense.ArrestDate }}</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>{{ offense.Disposition }}</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>{{ offense.DispositionDate }}</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>{{ offense.OffenseCode }}</OffenseCode>
+              <OffenseDescription>{{ offense.OffenseDescription }}</OffenseDescription>
+              <Severity>{{ offense.Severity }}</Severity>
+	     <Statute>{{ offense.Statute }}</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>{% endfor %}
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth>{{ subject.DateOfBirth }}</DateOfBirth>
+          <DateOfBirthDay>{{ subject.DateOfBirthDay }}</DateOfBirthDay>
+          <DateOfBirthMonth>{{ subject.DateOfBirthMonth }}</DateOfBirthMonth>
+          <DateOfBirthYear>{{ subject.DateOfBirthYear }}</DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+      <Names>{% for name in subject.Names %}
+        <Name>
+          <FirstName>{{ name.first }}</FirstName>
+          <LastName>{{ name.last }}</LastName>
+          <MiddleName>{{ name.middle }}</MiddleName>
+          <Suffix>{{ name.suffix }}</Suffix>
+          <Type>{{ name.type }}</Type>
+        </Name>{% endfor %}
+      </Names>
+      <Gender>{{ subject.Gender }}</Gender>
+      <Race>{{ subject.Race }}</Race>
+      <ImageMatches />
+    </Subject>{% endfor %}
+  </Subjects>

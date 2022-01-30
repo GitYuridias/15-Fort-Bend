@@ -4,6 +4,7 @@ import time, sys, os, os.path, datetime, re, csv, logging, glob, json, requests
 from uuid import uuid1
 from bs4 import BeautifulSoup
 from jinja2 import Template
+import errno
 from operator import itemgetter
 from .sandbox import webdriver
 from .sandbox.webdriver.common.by import By
@@ -205,6 +206,8 @@ class Runner(object):
     def xBuilder(self):
         xml = open(self.xmlTemplate).read()
         template = Template(xml)
+        print(self.generalData)
+        print(self.bigDATA)
         rep = template.render(general=self.generalData, subjects=self.bigDATA)
         open(self.xmlRep, "w").write(rep)
 

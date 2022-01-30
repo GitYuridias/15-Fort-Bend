@@ -23,20 +23,20 @@ driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
 # middle = "Tirrell"
 # birth = ""
 
-# last = "Candler"
-# first = "James"
-# middle = ""
-# birth = "07/23/1954"
+last = "Candler"
+first = "James"
+middle = ""
+birth = "07/23/1954"
 
 # last = "Williams"
 # first = "Willie"
 # middle = "Charles"
 # birth = ""
 
-last = "Williams"
-first = "Billy"
-middle = "Ray"
-birth = ""
+# last = "Williams"
+# first = "Billy"
+# middle = "Ray"
+# birth = ""
 
 Internal_ID = "0436D707-7660-444E-84E4-3F7F89675B60"
 
@@ -96,6 +96,7 @@ else:
         results["info"][f"case_{i - 2}"]['Last_Name'] = last
         results["info"][f"case_{i - 2}"]['Middle_Name'] = middle
         results["info"][f"case_{i - 2}"]['Suffix'] = ""
+
         # Getting Middle Name and Suffix from case page defendant part
         if len(driver.find_element(By.ID, "PIr11").text.split(' ')) == 3 and not results["info"][f"case_{i - 2}"]['Middle_Name']:
             results["info"][f"case_{i - 2}"]['Middle_Name'] = driver.find_element(By.ID, "PIr11").text.split(' ')[-1]
@@ -126,6 +127,7 @@ else:
 
         results["info"][f"case_{i - 2}"]['Category'] = "CRIMINAL"
         results["info"][f"case_{i - 2}"]['CourtJurisdiction'] = 'FORT BEND'
+
         try:
             cfd = driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr/td[3]/table/tbody/tr/td/table/tbody/tr[2]/td/b").text
             results["info"][f"case_{i - 2}"]['CaseFileDate'] = cfd[-4:] + cfd[0:2] + cfd[3:5]
@@ -135,8 +137,9 @@ else:
             results["info"][f"case_{i - 2}"]['CaseFileDate'] = ""
             results["info"][f"case_{i - 2}"]['CaseNumber'] = ""
             results["info"][f"case_{i - 2}"]['CourtName'] = ""
-        # charge(s)
 
+
+        # charge(s)
         all_page_tables = driver.find_elements(By.XPATH, "/html/body/table")
         table_sequence = 0
         for rank in range(len(all_page_tables)):
@@ -219,5 +222,14 @@ time.sleep(2)
 
 with open(f"{last}_{first}.json", "w") as outfile:
     json.dump(results, outfile, indent=4)
+
+current_folder_path, current_folder_name = os.path.split(os.path.abspath(__file__))
+xmlTemplate = current_folder_path + '\\arman_yura.xml'
+xml = open(xmlTemplate).read()
+template = Template(xml)
+print(self.generalData)
+print(self.bigDATA)
+rep = template.render(general=self.generalData, subjects=self.bigDATA)
+open(self.xmlRep, "w").write(rep)
 
 driver.quit()

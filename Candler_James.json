@@ -2,30 +2,34 @@
     "primary": {
         "First_Name": "James",
         "Last_Name": "Candler",
-        "Middle_Name": "Milton",
+        "Middle_Name": "",
         "Date_of_Birth": "07/23/0723",
         "State_Abbreviation": "TX",
         "Area": "Fort Bend",
-        "today": "2022-01-26 23:03:52.698292",
+        "today": "2022-01-29 20:08:17.721992",
         "Internal_ID": "0436D707-7660-444E-84E4-3F7F89675B60",
         "Source_Site": "https://www.fortbendcountytx.gov/government/courts/court-records-research",
         "DATA_SOURCE": "TX_FORT_BEND",
         "status": "Complete",
         "Result_Not_Found": "false",
-        "Search_Type": "CRIMINAL",
-        "Gender": "Male",
-        "Race": "Black"
+        "Search_Type": "CRIMINAL"
     },
     "aliases": {},
     "info": {
         "case_1": {
+            "First_Name": "James",
+            "Last_Name": "Candler",
+            "Middle_Name": "Milton",
+            "Suffix": "",
+            "Gender": "Male",
+            "Race": "Black",
             "City": "HOUSTON",
             "State": "TX",
             "Zip": "00000",
-            "CaseFileDate": "19990917",
-            "CaseNumber": "99-CCR-084293",
             "Category": "CRIMINAL",
             "CourtJurisdiction": "FORT BEND",
+            "CaseFileDate": "19990917",
+            "CaseNumber": "99-CCR-084293",
             "CourtName": "County Court at Law 2",
             "charge_1": {
                 "ChargeFileDate": "19990902",
@@ -36,19 +40,25 @@
                 "CountyOrJurisdiction": "FORT BEND",
                 "Sentence": "",
                 "ArrestDate": "19990902",
+                "Comment": "",
                 "Disposition": "Dismissed",
-                "DispositionDate": "20000425",
-                "Comment": ""
+                "DispositionDate": "20000425"
             }
         },
         "case_2": {
+            "First_Name": "James",
+            "Last_Name": "Candler",
+            "Middle_Name": "Milton",
+            "Suffix": "",
+            "Gender": "Male",
+            "Race": "Black",
             "City": "HOUSTON",
             "State": "TX",
             "Zip": "77083",
-            "CaseFileDate": "19991018",
-            "CaseNumber": "99-DCR-032385",
             "Category": "CRIMINAL",
             "CourtJurisdiction": "FORT BEND",
+            "CaseFileDate": "19991018",
+            "CaseNumber": "99-DCR-032385",
             "CourtName": "240th District Court",
             "charge_1": {
                 "ChargeFileDate": "19990902",
@@ -59,19 +69,25 @@
                 "CountyOrJurisdiction": "FORT BEND",
                 "Sentence": " 0 Years 0 Months 180 Days",
                 "ArrestDate": "19990902",
+                "Comment": "Bond Amount: 10,000",
                 "Disposition": "Convicted",
-                "DispositionDate": "20000605",
-                "Comment": "Bond Amount: 10,000"
+                "DispositionDate": "20000605"
             }
         },
         "case_3": {
+            "First_Name": "James",
+            "Last_Name": "Candler",
+            "Middle_Name": "Milton",
+            "Suffix": "",
+            "Gender": "Male",
+            "Race": "Black",
             "City": "HOUSTON",
             "State": "TX",
             "Zip": "00000",
-            "CaseFileDate": "20000301",
-            "CaseNumber": "00-CCR-084293A",
             "Category": "CRIMINAL",
             "CourtJurisdiction": "FORT BEND",
+            "CaseFileDate": "20000301",
+            "CaseNumber": "00-CCR-084293A",
             "CourtName": "County Court at Law 2",
             "charge_1": {
                 "ChargeFileDate": "19990902",
@@ -82,9 +98,9 @@
                 "CountyOrJurisdiction": "FORT BEND",
                 "Sentence": " 0 Months 54 Days",
                 "ArrestDate": "19990902",
+                "Comment": "",
                 "Disposition": "Convicted",
-                "DispositionDate": "20000710",
-                "Comment": ""
+                "DispositionDate": "20000710"
             }
         }
     }
