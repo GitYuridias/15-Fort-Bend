@@ -17,65 +17,58 @@ driver.get("http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx")
 # click on Criminal Case Records
 driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
 
-# fill in the form (last name, first name, dob) and submit
 
-last = "Lee"
-first = "Derrick"
-middle = "Tirrell"
-birth = ""
+class Scraper:
+    def __init__(self, internal_id, name, surname, middle_name, date_of_birth):
+        self.internal_id = internal_id
+        self.name = name
+        self.surname = surname
+        self.middle_name = middle_name
+        self.date_of_birth = date_of_birth
 
-# last = "Candler"
-# first = "James"
-# middle = ""
-# birth = "07/23/1954"
+    def submit_form(self):
 
-# last = "Williams"
-# first = "Willie"
-# middle = "Charles"
-# birth = ""
+        self.driver = webdriver.Chrome(PATH)
+        self.driver.get(DESTINATION_URL)
 
-# last = "Williams"
-# first = "Billy"
-# middle = "Ray"
-# birth = ""
+        # click on Criminal Case Records
+        self.driver.find_element(By.LINK_TEXT, "Criminal Case Records").click()
+        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.ID, "LastName")))
+        ln = self.driver.find_element(By.ID, "LastName")
+        ln.clear()
+        ln.send_keys(self.surname)
 
-Internal_ID = "0436D707-7660-444E-84E4-3F7F89675B60"
+        fn = self.driver.find_element(By.ID, "FirstName")
+        fn.clear()
+        fn.send_keys(self.name)
 
-WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "LastName")))
-ln = driver.find_element(By.ID, "LastName")
-ln.clear()
-ln.send_keys(last)
+        mid = self.driver.find_element(By.ID, "MiddleName")
+        mid.clear()
+        mid.send_keys(self.middle_name)
 
-fn = driver.find_element(By.ID, "FirstName")
-fn.clear()
-fn.send_keys(first)
+        dob = self.driver.find_element(By.ID, "DateOfBirth")
+        dob.clear()
+        dob.send_keys(self.date_of_birth)
 
-mid = driver.find_element(By.ID, "MiddleName")
-mid.clear()
-mid.send_keys(middle)
+        self.driver.find_element(By.ID, "SearchSubmit").click()
 
-dob = driver.find_element(By.ID, "DateOfBirth")
-dob.clear()
-dob.send_keys(birth)
+    def get_primary_dict(self):
 
-driver.find_element(By.ID, "SearchSubmit").click()
-driver.implicitly_wait(5)
-
-# Constructing the dictionary
-results = {"primary": {}, "aliases": {}, 'info': {}}
-results["primary"]['First_Name'] = first
-results["primary"]['Last_Name'] = last
-results["primary"]['Middle_Name'] = middle
-results["primary"]['Date_of_Birth'] = birth[-4:] + birth[0:2] + birth[3:5]
-results["primary"]['State_Abbreviation'] = "TX"
-results["primary"]['Area'] = "Fort Bend"
-results["primary"]['today'] = str(datetime.today())
-results["primary"]['Internal_ID'] = Internal_ID
-results["primary"]['Source_Site'] = "http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx"
-results["primary"]['DATA_SOURCE'] = "TX_FORT_BEND"
-results["primary"]['status'] = "Complete"
-results["primary"]['Result_Not_Found'] = 'false'
-results["primary"]['Search_Type'] = "CRIMINAL"
+        # Constructing the dictionary
+        results = {"primary": {}, "aliases": {}, 'info': {}}
+        results["primary"]['First_Name'] = first
+        results["primary"]['Last_Name'] = last
+        results["primary"]['Middle_Name'] = middle
+        results["primary"]['Date_of_Birth'] = birth[-4:] + birth[0:2] + birth[3:5]
+        results["primary"]['State_Abbreviation'] = "TX"
+        results["primary"]['Area'] = "Fort Bend"
+        results["primary"]['today'] = str(datetime.today())
+        results["primary"]['Internal_ID'] = Internal_ID
+        results["primary"]['Source_Site'] = "https://www.fortbendcountytx.gov/government/courts/court-records-research"
+        results["primary"]['DATA_SOURCE'] = "TX_FORT_BEND"
+        results["primary"]['status'] = "Complete"
+        results["primary"]['Result_Not_Found'] = 'false'
+        results["primary"]['Search_Type'] = "CRIMINAL"
 
 if int(driver.find_element(By.XPATH, "/html/body/table[3]/tbody/tr[1]/td[2]/b").text) == 0:
 
