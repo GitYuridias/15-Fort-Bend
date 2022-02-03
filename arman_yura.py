@@ -47,6 +47,7 @@ class Scraper:
         dob.clear()
         dob.send_keys(self.date_of_birth)
 
+        time.sleep(2)
         self.driver.find_element(By.ID, "SearchSubmit").click()
 
     def get_primary_dict(self):
@@ -263,7 +264,7 @@ class XMLGenerator:
             XMLcases[i]["CourtName"] = results["info"][f"case_{i+1}"]['CourtName']
             XMLcases[i]["Offenses"] = []
 
-            for j in range(1, countCharges(results["info"][f"case_{i+1}"], "charge")+1):
+            for j in range(1, countCharges(results["info"][f"case_{i+1}"])+1):
                 charge = {}
                 charge["ChargeFileDate"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["ChargeFileDate"]
                 charge["Comment"] = results["info"][f"case_{i+1}"][f"charge_{j}"]["Comment"]

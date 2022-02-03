@@ -5,39 +5,19 @@ from arman_yura_configs.configs import INTERNAL_ID
 from arman_yura import Scraper, XMLGenerator
 from arman_yura_utils.utils import set_json
 
-# last = "Lee"
-# first = "Derrick"
-# middle = "Tirrell"
-# birth = ""
-
-# last = "Candler"
-# first = "James"
-# middle = ""
-# birth = "07/23/1954"
-
-# last = "Williams"
-# first = "Willie"
-# middle = "Charles"
-# birth = ""
-
-# last = "Williams"
-# first = "Billy"
-# middle = "Ray"
-# birth = ""
-
 @click.command()
 @click.option(
     "-fn",
     "--first_name",
     required=True,
-    default='Candler',
+    default='',
     help="First name of the person",
     type=str,
 )
 @click.option(
     "-ln",
     "--last_name",
-    default="James",
+    default='',
     required=True,
     help="Last Name of the person",
     type=str,
@@ -53,7 +33,7 @@ from arman_yura_utils.utils import set_json
 @click.option(
     "-dob",
     "--date_of_birth",
-    default="07/23/1954",
+    default="",
     required=False,
     help="Date of birth of the person",
     type=str,
@@ -96,6 +76,7 @@ def scrape_data(
                           cases_list=all_cases_list)
 
     print(f'The xml file is set')
+
 
 if __name__ == '__main__':
     scrape_data()
