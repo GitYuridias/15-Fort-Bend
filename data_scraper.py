@@ -2,13 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
 import time
 import warnings
 import json
 import os
 from datetime import datetime
 from jinja2 import Template
-from configs.configs import DESTINATION_URL, CHROME_DRIVER_PATH, INTERNAL_ID
+from configs.configs import DESTINATION_URL, CHROME_DRIVER_PATH
 from utils.utils import countCharges
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -24,7 +25,10 @@ class Scraper:
 
     def submit_form(self):
 
-        self.driver = webdriver.Chrome(CHROME_DRIVER_PATH)
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+
+        self.driver = webdriver.Chrome(CHROME_DRIVER_PATH, options=options)
         self.driver.get(DESTINATION_URL)
 
         # click on Criminal Case Records
@@ -61,7 +65,7 @@ class Scraper:
         results["primary"]['State_Abbreviation'] = "TX"
         results["primary"]['Area'] = "Fort Bend"
         results["primary"]['today'] = str(datetime.today())
-        results["primary"]['Internal_ID'] = INTERNAL_ID
+        results["primary"]['Internal_ID'] = self.internal_id
         results["primary"]['Source_Site'] = "https://www.fortbendcountytx.gov/government/courts/court-records-research"
         results["primary"]['DATA_SOURCE'] = "TX_FORT_BEND"
         results["primary"]['status'] = "Complete"
@@ -302,7 +306,7 @@ class XMLGenerator:
         rep = template.render(general=general_dict, subjects=cases_list)
 
         final_xml_path = os.path.join(os.path.split(os.path.abspath(__file__))[0],
-                                      "final_reports", f"{lastname}_{firstname}_bari_or_dzez",
+                                      "final_reports", f"{lastname}_{firstname}",
                                       f"{lastname}_{firstname}")
 
         open(f"{final_xml_path}.xml", "w").write(rep)

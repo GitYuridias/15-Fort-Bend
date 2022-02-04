@@ -5,47 +5,47 @@
     <DataSource>TX_FORT_BEND</DataSource>
     <From>FORT BEND</From>
     <ScrapedDate>20220205</ScrapedDate>
-    <Name1>LEE DERRICK</Name1>
+    <Name1>WILLIAMS WILLIE</Name1>
   </SearchCriteria>
   <Subjects>
     <Subject>
       <Addresses>
         <Address>
-        <City>Houston</City>
+        <City>RICHMOND</City>
         <StreetName></StreetName>
         <Country></Country>
         <County></County>
         <State>TX</State>
-        <ZipCode>77028</ZipCode>
+        <ZipCode>77469</ZipCode>
         </Address>
       </Addresses>
       <Cases>
         <Case>
-          <CaseFileDate>20100920</CaseFileDate>
-          <CaseNumber>10-DCR-055404</CaseNumber>
+          <CaseFileDate>20060327</CaseFileDate>
+          <CaseNumber>06-DCR-044018</CaseNumber>
           <Category>CRIMINAL</Category>
            <Comments />
           <CourtJurisdiction>FORT BEND</CourtJurisdiction>
-          <CourtName>434th District Court</CourtName>
+          <CourtName>400th District Court</CourtName>
           <CourtType></CourtType>
           <InternalId></InternalId>
           <Offenses>
             <Offense>
-              <ChargeFileDate>20100827</ChargeFileDate>
+              <ChargeFileDate>20050211</ChargeFileDate>
               <Comment></Comment>
-              <Sentence></Sentence>
-              <ArrestDate>20100827</ArrestDate>
+              <Sentence> 0 Years 12 Months 0 Days</Sentence>
+              <ArrestDate>20050211</ArrestDate>
               <ConvictionDate></ConvictionDate>
               <ConvictionLocation></ConvictionLocation>
               <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
-              <Disposition>Dismissed</Disposition>
+              <Disposition>Convicted</Disposition>
               <DispositionCategory></DispositionCategory>
-              <DispositionDate>20120112</DispositionDate>
+              <DispositionDate>20061012</DispositionDate>
               <InternalId></InternalId>
-              <OffenseCode>30.02(c)(2) - BURGLARY OF HABITATION</OffenseCode>
-              <OffenseDescription>BURGLARY OF HABITATION</OffenseDescription>
-              <Severity>Second Degree Felony</Severity>
-	     <Statute>30.02(c)(2)</Statute>
+              <OffenseCode>32.32 PC - FALSE STATEMENT FOR PROPERTY/CREDIT $1500<$20K/FS</OffenseCode>
+              <OffenseDescription>FALSE STATEMENT FOR PROPERTY/CREDIT $1500<$20K/FS</OffenseDescription>
+              <Severity>State Jail Felony</Severity>
+	     <Statute>32.32 PC</Statute>
               <Sequence>1</Sequence>
 	  </Offense>
           </Offenses>
@@ -63,9 +63,9 @@
         </DateOfBirth>
       </DatesOfBirth>
         <Name>
-          <FirstName>Derrick</FirstName>
-          <LastName>Lee</LastName>
-          <MiddleName>Tirrell</MiddleName>
+          <FirstName>Willie</FirstName>
+          <LastName>Williams</LastName>
+          <MiddleName>Charles</MiddleName>
           <Suffix></Suffix>
           <Type>Primary</Type>
         </Name>
@@ -76,59 +76,41 @@
     <Subject>
       <Addresses>
         <Address>
-        <City>Houston</City>
+        <City>RICHMOND</City>
         <StreetName></StreetName>
         <Country></Country>
         <County></County>
         <State>TX</State>
-        <ZipCode>77028</ZipCode>
+        <ZipCode>77469</ZipCode>
         </Address>
       </Addresses>
       <Cases>
         <Case>
-          <CaseFileDate>20110627</CaseFileDate>
-          <CaseNumber>10-DCR-055404A</CaseNumber>
+          <CaseFileDate>20060327</CaseFileDate>
+          <CaseNumber>06-DCR-044019</CaseNumber>
           <Category>CRIMINAL</Category>
            <Comments />
           <CourtJurisdiction>FORT BEND</CourtJurisdiction>
-          <CourtName>434th District Court</CourtName>
+          <CourtName>400th District Court</CourtName>
           <CourtType></CourtType>
           <InternalId></InternalId>
           <Offenses>
             <Offense>
-              <ChargeFileDate>20100827</ChargeFileDate>
+              <ChargeFileDate>20050211</ChargeFileDate>
               <Comment></Comment>
-              <Sentence> 5 Years</Sentence>
-              <ArrestDate>20100827</ArrestDate>
+              <Sentence> 0 Years 12 Months 0 Days</Sentence>
+              <ArrestDate>20050211</ArrestDate>
               <ConvictionDate></ConvictionDate>
               <ConvictionLocation></ConvictionLocation>
               <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
               <Disposition>Convicted</Disposition>
               <DispositionCategory></DispositionCategory>
-              <DispositionDate>20120112</DispositionDate>
+              <DispositionDate>20061012</DispositionDate>
               <InternalId></InternalId>
-              <OffenseCode>30.02(c)(2) - ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseCode>
-              <OffenseDescription>ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseDescription>
-              <Severity>Third Degree Felony</Severity>
-	     <Statute>30.02(c)(2)</Statute>
-              <Sequence>1</Sequence>
-	  </Offense>
-            <Offense>
-              <ChargeFileDate>20100827</ChargeFileDate>
-              <Comment></Comment>
-              <Sentence> 5 Years</Sentence>
-              <ArrestDate>20100827</ArrestDate>
-              <ConvictionDate></ConvictionDate>
-              <ConvictionLocation></ConvictionLocation>
-              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
-              <Disposition>Convicted</Disposition>
-              <DispositionCategory></DispositionCategory>
-              <DispositionDate>20120112</DispositionDate>
-              <InternalId></InternalId>
-              <OffenseCode>30.02(c)(2) - ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseCode>
-              <OffenseDescription>ATTEMPTED BURGLARY OF HABITATION (Attempted to Commit)</OffenseDescription>
-              <Severity>Third Degree Felony</Severity>
-	     <Statute>30.02(c)(2)</Statute>
+              <OffenseCode>32.51 PC - FRAUD USE POSS OF IDENTIFYING INFO/FS</OffenseCode>
+              <OffenseDescription>FRAUD USE POSS OF IDENTIFYING INFO/FS</OffenseDescription>
+              <Severity>State Jail Felony</Severity>
+	     <Statute>32.51 PC</Statute>
               <Sequence>1</Sequence>
 	  </Offense>
           </Offenses>
@@ -146,9 +128,9 @@
         </DateOfBirth>
       </DatesOfBirth>
         <Name>
-          <FirstName>Derrick</FirstName>
-          <LastName>Lee</LastName>
-          <MiddleName>Tirrell</MiddleName>
+          <FirstName>Willie</FirstName>
+          <LastName>Williams</LastName>
+          <MiddleName>Charles</MiddleName>
           <Suffix></Suffix>
           <Type>Primary</Type>
         </Name>

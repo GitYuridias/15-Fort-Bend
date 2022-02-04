@@ -6,9 +6,9 @@
         "Date_of_Birth": "19540723",
         "State_Abbreviation": "TX",
         "Area": "Fort Bend",
-        "today": "2022-01-30 21:17:39.382150",
+        "today": "2022-02-05 01:09:17.150469",
         "Internal_ID": "0436D707-7660-444E-84E4-3F7F89675B60",
-        "Source_Site": "http://tylerpaw.co.fort-bend.tx.us/PublicAccess/default.aspx",
+        "Source_Site": "https://www.fortbendcountytx.gov/government/courts/court-records-research",
         "DATA_SOURCE": "TX_FORT_BEND",
         "status": "Complete",
         "Result_Not_Found": "false",
@@ -39,10 +39,10 @@
                 "Statute": "49.04 PC",
                 "CountyOrJurisdiction": "FORT BEND",
                 "Sentence": "",
-                "ArrestDate": "19990902",
-                "Comment": "",
                 "Disposition": "Dismissed",
-                "DispositionDate": "20000425"
+                "DispositionDate": "20000425",
+                "ArrestDate": "19990902",
+                "Comment": ""
             }
         },
         "case_2": {
@@ -68,10 +68,10 @@
                 "Statute": "481.134(D) HSC",
                 "CountyOrJurisdiction": "FORT BEND",
                 "Sentence": " 0 Years 0 Months 180 Days",
-                "ArrestDate": "19990902",
-                "Comment": "Bond Amount: 10,000",
                 "Disposition": "Convicted",
-                "DispositionDate": "20000605"
+                "DispositionDate": "20000605",
+                "ArrestDate": "19990902",
+                "Comment": "Bond Amount: 10,000"
             }
         },
         "case_3": {
@@ -97,10 +97,10 @@
                 "Statute": "49.04 PC",
                 "CountyOrJurisdiction": "FORT BEND",
                 "Sentence": " 0 Months 54 Days",
-                "ArrestDate": "19990902",
-                "Comment": "",
                 "Disposition": "Convicted",
-                "DispositionDate": "20000710"
+                "DispositionDate": "20000710",
+                "ArrestDate": "19990902",
+                "Comment": ""
             }
         }
     }

@@ -1,0 +1,198 @@
+{
+    "99-CCR-084293": {
+        "primary": {
+            "last": "Candler",
+            "first": "James",
+            "middle": "Milton",
+            "suffix": ""
+        },
+        "aliases": [],
+        "info": {
+            "Case Number": "99-CCR-084293",
+            "href": "http://tylerpaw.co.fort-bend.tx.us/PublicAccess/CaseDetail.aspx?CaseID=675112",
+            "Citation Number": "",
+            "Defendant Info": "Candler, James Milton",
+            "Filed": "09/17/1999",
+            "Location": "County Court at Law 2",
+            "Type": "Adult Misdemeanor - Filed by Information",
+            "Status": "Disposed",
+            "Charge(s)": [
+                "DRIVING WHILE INTOXICATED"
+            ],
+            "party": {
+                "Defendant": "Candler, James Milton",
+                "type": "Defendant",
+                "Gender": "Male",
+                "Race": "Black",
+                "phisics": "5' 11\", 195 lbs",
+                "zip": "00000",
+                "state": "TX",
+                "city": "HOUSTON"
+            },
+            "charge": [
+                {
+                    "Charge": "DRIVING WHILE INTOXICATED",
+                    "Statute": "49.04 PC",
+                    "Level": "Class B Misdemeanor",
+                    "Date": "19990902"
+                }
+            ],
+            "events": {
+                "Judgment": [
+                    "20000425",
+                    [
+                        "1. DRIVING WHILE INTOXICATED",
+                        "Dismissed"
+                    ]
+                ]
+            },
+            "bonds": [
+                {
+                    "Surety Bond": "#99-CCR-084293 $2,500",
+                    "APPROVED": "19990902",
+                    "Counts": "1",
+                    "Arrest Date": "19990902"
+                }
+            ]
+        }
+    },
+    "99-DCR-032385": {
+        "primary": {
+            "last": "Candler",
+            "first": "James",
+            "middle": "Milton",
+            "suffix": ""
+        },
+        "aliases": [],
+        "info": {
+            "Case Number": "99-DCR-032385",
+            "href": "http://tylerpaw.co.fort-bend.tx.us/PublicAccess/CaseDetail.aspx?CaseID=911526",
+            "Citation Number": "",
+            "Defendant Info": "Candler, James Milton",
+            "Filed": "10/18/1999",
+            "Location": "240th District Court",
+            "Type": "Adult Felony - Filed by Indictment",
+            "Status": "Disposed",
+            "Charge(s)": [
+                "POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3"
+            ],
+            "party": {
+                "Defendant": "Candler, James Milton",
+                "type": "Defendant",
+                "Gender": "Male",
+                "Race": "Black",
+                "phisics": "5' 11\", 195 lbs",
+                "zip": "77083",
+                "state": "TX",
+                "city": "HOUSTON"
+            },
+            "charge": [
+                {
+                    "Charge": "POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3",
+                    "Statute": "481.134(D) HSC",
+                    "Level": "Third Degree Felony",
+                    "Date": "19990902"
+                }
+            ],
+            "events": {
+                "Judgment": [
+                    "20000605",
+                    [
+                        "1. POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3",
+                        "Convicted"
+                    ]
+                ],
+                "Plea": [
+                    "20000605",
+                    [
+                        "1. POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3",
+                        "Guilty"
+                    ]
+                ],
+                "Committed Directly to State Jail": [
+                    "20000605",
+                    [
+                        "1. POSSESSION OF CONTROLLED SUBSTANCE DRUG FREE ZONE/F3",
+                        "Confinement to Commence 06/05/2000",
+                        "0 Years , 0 Months , 180 Days , State Penitentiary, Texas Department of Criminal Justice",
+                        "Jail Credit 56 Days"
+                    ]
+                ]
+            },
+            "bonds": [
+                {
+                    "Surety Bond": "#99-DCR-032385 $10,000",
+                    "FILED": "19991018",
+                    "Counts": "1",
+                    "Arrest Date": "19990902",
+                    "Comments": "Bond Amount: 10,000"
+                }
+            ]
+        }
+    },
+    "00-CCR-084293A": {
+        "primary": {
+            "last": "Candler",
+            "first": "James",
+            "middle": "Milton",
+            "suffix": ""
+        },
+        "aliases": [],
+        "info": {
+            "Case Number": "00-CCR-084293A",
+            "href": "http://tylerpaw.co.fort-bend.tx.us/PublicAccess/CaseDetail.aspx?CaseID=675113",
+            "Citation Number": "",
+            "Defendant Info": "Candler, James Milton",
+            "Filed": "03/01/2000",
+            "Location": "County Court at Law 2",
+            "Type": "Adult Misdemeanor - Filed by Information",
+            "Status": "Disposed",
+            "Charge(s)": [
+                "DRIVING WHILE INTOXICATED 2ND"
+            ],
+            "party": {
+                "Defendant": "Candler, James Milton",
+                "type": "Defendant",
+                "Gender": "Male",
+                "Race": "Black",
+                "phisics": "5' 11\", 195 lbs",
+                "zip": "00000",
+                "state": "TX",
+                "city": "HOUSTON"
+            },
+            "charge": [
+                {
+                    "Charge": "DRIVING WHILE INTOXICATED 2ND",
+                    "Statute": "49.04 PC",
+                    "Level": "Class A Misdemeanor",
+                    "Date": "19990902"
+                }
+            ],
+            "events": {
+                "Judgment": [
+                    "20000710",
+                    [
+                        "1. DRIVING WHILE INTOXICATED 2ND",
+                        "Convicted"
+                    ]
+                ],
+                "Committed to Local Jail": [
+                    "20000710",
+                    [
+                        "1. DRIVING WHILE INTOXICATED 2ND",
+                        "Confinement to Commence 07/10/2000",
+                        "0 Months , 54 Days , County Jail, Fort Bend County Sheriff's Office"
+                    ]
+                ]
+            },
+            "bonds": [
+                {
+                    "Surety Bond": "#00-CCR-084293A $2,500",
+                    "APPROVED": "19990902",
+                    "Counts": "1",
+                    "Arrest Date": "19990902"
+                }
+            ]
+        }
+    }
+}

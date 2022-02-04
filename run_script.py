@@ -1,7 +1,6 @@
 import click
 import os
 from os.path import dirname
-from configs.configs import INTERNAL_ID
 from data_scraper import Scraper, XMLGenerator
 from utils.utils import set_json
 
@@ -11,7 +10,7 @@ from utils.utils import set_json
     "--first_name",
     required=True,
     default='',
-    help="First name of the person",
+    help="First name of the person aka for example, -fn 'James' ",
     type=str,
 )
 @click.option(
@@ -19,7 +18,7 @@ from utils.utils import set_json
     "--last_name",
     default='',
     required=True,
-    help="Last Name of the person",
+    help="Last Name of the person aka for example, -ln 'Candler' ",
     type=str,
 )
 @click.option(
@@ -35,14 +34,14 @@ from utils.utils import set_json
     "--date_of_birth",
     default="",
     required=False,
-    help="Date of birth of the person",
+    help="Date of birth of the person where format must be 'MM/DD/YYYY' ",
     type=str,
 )
 @click.option(
     "-id",
     "--internalid",
     required=False,
-    default=INTERNAL_ID,
+    default="",
     help="Internal ID specified for each case",
     type=str,
 )
@@ -61,7 +60,7 @@ def scrape_data(
     detailed_scraped_dictionary = scraper.scrape_details(primary_dictionary)
     scraper.quit_driver()
 
-    desired_path = os.path.join(os.path.split(os.path.abspath(__file__))[0], "final_reports", f"{last_name}_{first_name}_bari_or_dzez")
+    desired_path = os.path.join(os.path.split(os.path.abspath(__file__))[0], "final_reports", f"{last_name}_{first_name}")
 
     try:
         os.mkdir(desired_path)

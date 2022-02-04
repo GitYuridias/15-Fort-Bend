@@ -1,0 +1,19 @@
+{
+    "primary": {
+        "First_Name": "Aram",
+        "Last_Name": "Sargsyan",
+        "Middle_Name": "",
+        "Date_of_Birth": "19970922",
+        "State_Abbreviation": "TX",
+        "Area": "Fort Bend",
+        "today": "2022-02-05 01:21:03.425930",
+        "Internal_ID": "",
+        "Source_Site": "https://www.fortbendcountytx.gov/government/courts/court-records-research",
+        "DATA_SOURCE": "TX_FORT_BEND",
+        "status": "Complete",
+        "Result_Not_Found": "true",
+        "Search_Type": "CRIMINAL"
+    },
+    "aliases": {},
+    "info": {}
+}
