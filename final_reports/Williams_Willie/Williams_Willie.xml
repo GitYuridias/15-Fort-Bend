@@ -1,0 +1,141 @@
+  <SearchCriteria>
+  <ScrapedDate>20220205</ScrapedDate>
+    <DateOfBirth>//</DateOfBirth>
+    <SourceSite>https://www.fortbendcountytx.gov/government/courts/court-records-research</SourceSite>
+    <DataSource>TX_FORT_BEND</DataSource>
+    <From>FORT BEND</From>
+    <ScrapedDate>20220205</ScrapedDate>
+    <Name1>WILLIAMS WILLIE</Name1>
+  </SearchCriteria>
+  <Subjects>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>RICHMOND</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77469</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20060327</CaseFileDate>
+          <CaseNumber>06-DCR-044018</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>400th District Court</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20050211</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence> 0 Years 12 Months 0 Days</Sentence>
+              <ArrestDate>20050211</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Convicted</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20061012</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>32.32 PC - FALSE STATEMENT FOR PROPERTY/CREDIT $1500<$20K/FS</OffenseCode>
+              <OffenseDescription>FALSE STATEMENT FOR PROPERTY/CREDIT $1500<$20K/FS</OffenseDescription>
+              <Severity>State Jail Felony</Severity>
+	     <Statute>32.32 PC</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Willie</FirstName>
+          <LastName>Williams</LastName>
+          <MiddleName>Charles</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+    <Subject>
+      <Addresses>
+        <Address>
+        <City>RICHMOND</City>
+        <StreetName></StreetName>
+        <Country></Country>
+        <County></County>
+        <State>TX</State>
+        <ZipCode>77469</ZipCode>
+        </Address>
+      </Addresses>
+      <Cases>
+        <Case>
+          <CaseFileDate>20060327</CaseFileDate>
+          <CaseNumber>06-DCR-044019</CaseNumber>
+          <Category>CRIMINAL</Category>
+           <Comments />
+          <CourtJurisdiction>FORT BEND</CourtJurisdiction>
+          <CourtName>400th District Court</CourtName>
+          <CourtType></CourtType>
+          <InternalId></InternalId>
+          <Offenses>
+            <Offense>
+              <ChargeFileDate>20050211</ChargeFileDate>
+              <Comment></Comment>
+              <Sentence> 0 Years 12 Months 0 Days</Sentence>
+              <ArrestDate>20050211</ArrestDate>
+              <ConvictionDate></ConvictionDate>
+              <ConvictionLocation></ConvictionLocation>
+              <CountyOrJurisdiction>FORT BEND</CountyOrJurisdiction>
+              <Disposition>Convicted</Disposition>
+              <DispositionCategory></DispositionCategory>
+              <DispositionDate>20061012</DispositionDate>
+              <InternalId></InternalId>
+              <OffenseCode>32.51 PC - FRAUD USE POSS OF IDENTIFYING INFO/FS</OffenseCode>
+              <OffenseDescription>FRAUD USE POSS OF IDENTIFYING INFO/FS</OffenseDescription>
+              <Severity>State Jail Felony</Severity>
+	     <Statute>32.51 PC</Statute>
+              <Sequence>1</Sequence>
+	  </Offense>
+          </Offenses>
+          <State>TX</State>
+        </Case>
+      </Cases>
+      <Source>TX_FORT_BEND</Source>
+      <DatesOfBirth>
+        <DateOfBirth>
+          <DateOfBirth></DateOfBirth>
+          <DateOfBirthDay></DateOfBirthDay>
+          <DateOfBirthMonth></DateOfBirthMonth>
+          <DateOfBirthYear></DateOfBirthYear>
+          <Type>Primary</Type>
+        </DateOfBirth>
+      </DatesOfBirth>
+        <Name>
+          <FirstName>Willie</FirstName>
+          <LastName>Williams</LastName>
+          <MiddleName>Charles</MiddleName>
+          <Suffix></Suffix>
+          <Type>Primary</Type>
+        </Name>
+      <Gender>Male</Gender>
+      <Race>Black</Race>
+      <ImageMatches />
+    </Subject>
+  </Subjects>
