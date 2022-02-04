@@ -15,9 +15,9 @@ In Terminal, run the below line to get general help with arguments that the scri
 'python run_script.py --help'
 
 
-Then, to execute the script for a combination of following arguments - [first name (required), last name (required), middle name (optional) and date of birth (optional)], run the below line with actual values instead of placeholders:
+Then, to execute the script for a combination of following arguments - [first name (required), last name (required), middle name (optional), date of birth (optional) and internal ID (optional)], run the below line with actual values instead of placeholders:
 
-'python run_script.py -fn "first name" -ln "last name" -mn "middle name" -dob "date of birth"'
+'python run_script.py -fn "first name" -ln "last name" -mn "middle name" -dob "date of birth" -id "internal ID"'
 
 
 For no-hit entries that won't return a record associated with them, a "No cases found for that person" message will be returned and no JSON & XML reports will be produced.
