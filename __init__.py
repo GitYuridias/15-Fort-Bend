@@ -1,3 +1,7 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ['lib']
+try:
+    import selenium
+except ImportError:
+    print('You need to install selenium package  with <pip install selenium> terminal command')
+    time.sleep(3)
