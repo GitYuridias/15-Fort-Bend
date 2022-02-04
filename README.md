@@ -1,6 +1,6 @@
 # 15-Fort-Bend
 
-Scraping of Criminal Data on Individual/Physical Entity Level for Fort Bend County in Texas, USA.
+Scraping of Criminal Data on Physical Entity Level for Fort Bend County in Texas, USA.
 
 
 USAGE 
