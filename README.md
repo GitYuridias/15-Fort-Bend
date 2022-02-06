@@ -3,12 +3,22 @@
 Scraping of Criminal Data on Physical Entity Level for Fort Bend County in Texas, USA.
 
 
-USAGE 
+SETUP
 -----
 
-First step is to install 'selenium' package in Python: to do so, run the below line. This will also be automatically initialized when the main script is called.
+First of all, have Google Chrome web browser installed on your computer. 
+
+The next step is to install Chromedriver and have it in the following location: "C:\Program Files (x86)" (this can also be manually modified in 'configs.py'). You will need to check the version of your Google Chrome by clicking on three dots at the top-right corner of the browser, then "Settings", and then 'About Chrome'. Thereafter, download the appropriate version of "chromedriver.exe" from here: "https://chromedriver.chromium.org/downloads" and extract in the above mentioned folder. 
+
+Then, please install 'selenium' package in Python: to do so, run the below line. This will also be automatically initialized when the main script is called.
 
 `pip install selenium'
+
+Lastly, please make sure that your Internet is configured to open U.S.-based websites (e.g., via VPN) as there are accessibility restrictions in place.
+
+
+USAGE 
+-----
 
 In Terminal, run the below line to get general help with arguments that the script intakes:
 
