@@ -7,6 +7,7 @@ import time
 import warnings
 import json
 import os
+from sys import platform
 from datetime import datetime
 from jinja2 import Template
 from configs.configs import DESTINATION_URL, CHROME_DRIVER_PATH
@@ -298,8 +299,10 @@ class XMLGenerator:
     def set_xml(self, firstname, lastname, general_dict, cases_list):
 
         current_folder_path, current_folder_name = os.path.split(os.path.abspath(__file__))
-        xmlTemplate = current_folder_path + '\\template_structure.xml'
-
+        if platform == "linux" or platform == "linux2" or platform == "darwin":
+            xmlTemplate = current_folder_path + '/template_structure.xml'
+        elif platform == "win32":
+            xmlTemplate = current_folder_path + '\\template_structure.xml'
         xml = open(xmlTemplate).read()
         template = Template(xml)
 
