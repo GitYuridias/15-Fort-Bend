@@ -8,7 +8,13 @@ SETUP
 
 First of all, have Google Chrome web browser installed on your computer. 
 
-The next step is to install Chromedriver and have it in the following location: "C:\Program Files (x86)" (this can also be manually modified in 'configs.py'). You will need to check the version of your Google Chrome by clicking on three dots at the top-right corner of the browser, then "Settings", and then 'About Chrome'. Thereafter, based on the obtained Chrome version and your OS (Windows/Mac/Linux), download the appropriate version of "chromedriver.exe" from here: "https://chromedriver.chromium.org/downloads" and extract in the above mentioned folder. 
+The next step is to install Chromedriver and have it in the following location (this can also be manually modified in 'configs.py'): 
+
+For Windows users: "C:\Program Files (x86)"
+For Mac users: "\Applications"
+For Linux users: "\opt". 
+
+You will need to check the version of your Google Chrome by clicking on three dots at the top-right corner of the browser, then "Settings", and then 'About Chrome'. Thereafter, based on the obtained Chrome version and your OS, download the appropriate version of "chromedriver.exe" from here: "https://chromedriver.chromium.org/downloads" and extract in the above mentioned folder. 
 
 Then, please install 'selenium' package in Python: to do so, run the below line. This will also be automatically initialized when the main script is called.
 
