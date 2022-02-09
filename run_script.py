@@ -40,7 +40,7 @@ from utils.utils import set_json
 @click.option(
     "-id",
     "--internalid",
-    required=False,
+    required=True,
     default="",
     help="Internal ID specified for each case",
     type=str,
@@ -60,18 +60,18 @@ def scrape_data(
     detailed_scraped_dictionary = scraper.scrape_details(primary_dictionary)
     scraper.quit_driver()
 
-    desired_path = os.path.join(os.path.split(os.path.abspath(__file__))[0], "final_reports", f"{last_name}_{first_name}")
+    desired_path = os.path.join(os.path.split(os.path.abspath(__file__))[0], "final_reports", f"{internalid}")
 
     try:
         os.mkdir(desired_path)
     except:
         print('The folder already exists so we just continue to set json and xml files')
 
-    set_json(input_path=desired_path, name=first_name, surname=last_name, input_dict=detailed_scraped_dictionary)
+    set_json(input_path=desired_path, internal_id=internalid, input_dict=detailed_scraped_dictionary)
 
     xml_generator = XMLGenerator()
     general_dictionary, all_cases_list = xml_generator.generate_final_xml(detailed_scraped_dictionary)
-    xml_generator.set_xml(firstname=first_name, lastname=last_name, general_dict=general_dictionary,
+    xml_generator.set_xml(internal_id=internalid, general_dict=general_dictionary,
                           cases_list=all_cases_list)
 
     print(f'The xml file is set')

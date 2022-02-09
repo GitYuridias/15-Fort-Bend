@@ -13,9 +13,9 @@ def countCharges(input_dict):
     return count
 
 
-def set_json(input_path, name, surname, input_dict):
+def set_json(input_path, internal_id, input_dict):
 
-    final_path = os.path.join(input_path, f"{surname}_{name}.json")
+    final_path = os.path.join(input_path, f"{internal_id}.json")
 
     with open(final_path, "w") as outfile:
         json.dump(input_dict, outfile, indent=4)

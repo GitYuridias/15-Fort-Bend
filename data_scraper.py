@@ -296,7 +296,7 @@ class XMLGenerator:
 
         return XMLgeneral, XMLcases
 
-    def set_xml(self, firstname, lastname, general_dict, cases_list):
+    def set_xml(self, internal_id, general_dict, cases_list):
 
         current_folder_path, current_folder_name = os.path.split(os.path.abspath(__file__))
         if platform == "linux" or platform == "linux2" or platform == "darwin":
@@ -309,7 +309,7 @@ class XMLGenerator:
         rep = template.render(general=general_dict, subjects=cases_list)
 
         final_xml_path = os.path.join(os.path.split(os.path.abspath(__file__))[0],
-                                      "final_reports", f"{lastname}_{firstname}",
-                                      f"{lastname}_{firstname}")
+                                      "final_reports", f"{internal_id}",
+                                      f"{internal_id}")
 
         open(f"{final_xml_path}.xml", "w").write(rep)
